@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SnapChatInteractivityTest", "SnapChatInteractivityTest.csproj", "{5F30E78C-7FD5-47BC-9957-3EE1DBBA9559}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SnapChatInteractivityTest.Editor", "SnapChatInteractivityTest.Editor.csproj", "{EA5C9D56-A02B-89A0-F0AC-204D39751904}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OpenCVTest", "OpenCVTest\OpenCVTest.vcxproj", "{41CC592E-EE2A-4BDE-AA30-44F073C66818}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5F30E78C-7FD5-47BC-9957-3EE1DBBA9559}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F30E78C-7FD5-47BC-9957-3EE1DBBA9559}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F30E78C-7FD5-47BC-9957-3EE1DBBA9559}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F30E78C-7FD5-47BC-9957-3EE1DBBA9559}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA5C9D56-A02B-89A0-F0AC-204D39751904}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA5C9D56-A02B-89A0-F0AC-204D39751904}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA5C9D56-A02B-89A0-F0AC-204D39751904}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA5C9D56-A02B-89A0-F0AC-204D39751904}.Release|Any CPU.Build.0 = Release|Any CPU
+		{41CC592E-EE2A-4BDE-AA30-44F073C66818}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41CC592E-EE2A-4BDE-AA30-44F073C66818}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41CC592E-EE2A-4BDE-AA30-44F073C66818}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41CC592E-EE2A-4BDE-AA30-44F073C66818}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

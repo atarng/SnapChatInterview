@@ -1,0 +1,11 @@
+﻿  Test.cpp
+Test.cpp(35): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+Test.cpp(36): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+     Creating library D:\Documents\Interviews\SnapChatTest\SnapChatInteractivityTest\x64\Release\OpenCVTest.lib and object D:\Documents\Interviews\SnapChatTest\SnapChatInteractivityTest\x64\Release\OpenCVTest.exp
+  Generating code
+  4 of 69 functions ( 5.8%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  OpenCVTest.vcxproj -> D:\Documents\Interviews\SnapChatTest\SnapChatInteractivityTest\x64\Release\OpenCVTest.dll
+  OpenCVTest.vcxproj -> D:\Documents\Interviews\SnapChatTest\SnapChatInteractivityTest\x64\Release\OpenCVTest.pdb (Full PDB)
