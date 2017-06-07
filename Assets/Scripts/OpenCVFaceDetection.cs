@@ -26,7 +26,7 @@ public struct CvCircle {
 }
 
 public class OpenCVFaceDetection : MonoBehaviour {
-    public static List<Vector3> NormalizedFacePositions { get; private set; }
+    public static List<Vector3> NormalizedFacePositions { get; set; }// private set; }
     public static Vector2 CameraResolution;
 
     /// <summary>
