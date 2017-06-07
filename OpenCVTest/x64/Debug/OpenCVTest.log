@@ -1,6 +1,6 @@
-﻿  Test.cpp
-d:\documents\interviews\snapchattest\snapchatinteractivitytest\opencvtest\test.cpp(35): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-d:\documents\interviews\snapchattest\snapchatinteractivitytest\opencvtest\test.cpp(36): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+﻿  ThomasMountainReference.cpp
+  Test.cpp
+  Generating Code...
      Creating library D:\Documents\Interviews\SnapChatTest\SnapChatInteractivityTest\x64\Debug\OpenCVTest.lib and object D:\Documents\Interviews\SnapChatTest\SnapChatInteractivityTest\x64\Debug\OpenCVTest.exp
   OpenCVTest.vcxproj -> D:\Documents\Interviews\SnapChatTest\SnapChatInteractivityTest\x64\Debug\OpenCVTest.dll
   OpenCVTest.vcxproj -> D:\Documents\Interviews\SnapChatTest\SnapChatInteractivityTest\x64\Debug\OpenCVTest.pdb (Partial PDB)

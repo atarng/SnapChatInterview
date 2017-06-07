@@ -1,0 +1,26 @@
+﻿  Test.cpp
+Test.cpp(35): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+Test.cpp(36): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+     Creating library D:\Documents\Interviews\SnapChatTest\SnapChatInteractivityTest\Release\OpenCVTest.lib and object D:\Documents\Interviews\SnapChatTest\SnapChatInteractivityTest\Release\OpenCVTest.exp
+Test.obj : error LNK2001: unresolved external symbol "void __cdecl cv::imshow(class cv::String const &,class cv::_InputArray const &)" (?imshow@cv@@YAXABVString@1@ABV_InputArray@1@@Z)
+Test.obj : error LNK2001: unresolved external symbol "void __cdecl cv::equalizeHist(class cv::_InputArray const &,class cv::_OutputArray const &)" (?equalizeHist@cv@@YAXABV_InputArray@1@ABV_OutputArray@1@@Z)
+Test.obj : error LNK2001: unresolved external symbol "public: virtual double __thiscall cv::VideoCapture::get(int)const " (?get@VideoCapture@cv@@UBENH@Z)
+Test.obj : error LNK2001: unresolved external symbol "public: virtual void __thiscall cv::VideoCapture::release(void)" (?release@VideoCapture@cv@@UAEXXZ)
+Test.obj : error LNK2001: unresolved external symbol "public: virtual bool __thiscall cv::VideoCapture::isOpened(void)const " (?isOpened@VideoCapture@cv@@UBE_NXZ)
+Test.obj : error LNK2001: unresolved external symbol "public: virtual bool __thiscall cv::VideoCapture::open(int)" (?open@VideoCapture@cv@@UAE_NH@Z)
+Test.obj : error LNK2001: unresolved external symbol "public: virtual __thiscall cv::VideoCapture::~VideoCapture(void)" (??1VideoCapture@cv@@UAE@XZ)
+Test.obj : error LNK2001: unresolved external symbol "public: __thiscall cv::VideoCapture::VideoCapture(void)" (??0VideoCapture@cv@@QAE@XZ)
+Test.obj : error LNK2001: unresolved external symbol "double __cdecl cv::threshold(class cv::_InputArray const &,class cv::_OutputArray const &,double,double,int)" (?threshold@cv@@YANABV_InputArray@1@ABV_OutputArray@1@NNH@Z)
+Test.obj : error LNK2001: unresolved external symbol "public: void __thiscall cv::Mat::deallocate(void)" (?deallocate@Mat@cv@@QAEXXZ)
+Test.obj : error LNK2001: unresolved external symbol "void __cdecl cv::cvtColor(class cv::_InputArray const &,class cv::_OutputArray const &,int,int)" (?cvtColor@cv@@YAXABV_InputArray@1@ABV_OutputArray@1@HH@Z)
+Test.obj : error LNK2001: unresolved external symbol "void __cdecl cv::fastFree(void *)" (?fastFree@cv@@YAXPAX@Z)
+Test.obj : error LNK2001: unresolved external symbol "private: void __thiscall cv::String::deallocate(void)" (?deallocate@String@cv@@AAEXXZ)
+Test.obj : error LNK2001: unresolved external symbol "private: char * __thiscall cv::String::allocate(unsigned int)" (?allocate@String@cv@@AAEPADI@Z)
+Test.obj : error LNK2001: unresolved external symbol "void __cdecl cv::error(int,class cv::String const &,char const *,char const *,int)" (?error@cv@@YAXHABVString@1@PBD1H@Z)
+Test.obj : error LNK2001: unresolved external symbol "public: void __thiscall cv::CascadeClassifier::detectMultiScale(class cv::_InputArray const &,class std::vector<class cv::Rect_<int>,class std::allocator<class cv::Rect_<int> > > &,double,int,int,class cv::Size_<int>,class cv::Size_<int>)" (?detectMultiScale@CascadeClassifier@cv@@QAEXABV_InputArray@2@AAV?$vector@V?$Rect_@H@cv@@V?$allocator@V?$Rect_@H@cv@@@std@@@std@@NHHV?$Size_@H@2@2@Z)
+Test.obj : error LNK2001: unresolved external symbol "public: bool __thiscall cv::CascadeClassifier::load(class cv::String const &)" (?load@CascadeClassifier@cv@@QAE_NABVString@2@@Z)
+Test.obj : error LNK2001: unresolved external symbol "public: __thiscall cv::CascadeClassifier::~CascadeClassifier(void)" (??1CascadeClassifier@cv@@QAE@XZ)
+Test.obj : error LNK2001: unresolved external symbol "public: __thiscall cv::CascadeClassifier::CascadeClassifier(void)" (??0CascadeClassifier@cv@@QAE@XZ)
+Test.obj : error LNK2001: unresolved external symbol "void __cdecl cv::ellipse(class cv::_InputOutputArray const &,class cv::Point_<int>,class cv::Size_<int>,double,double,double,class cv::Scalar_<double> const &,int,int,int)" (?ellipse@cv@@YAXABV_InputOutputArray@1@V?$Point_@H@1@V?$Size_@H@1@NNNABV?$Scalar_@N@1@HHH@Z)
+Test.obj : error LNK2001: unresolved external symbol "void __cdecl cv::resize(class cv::_InputArray const &,class cv::_OutputArray const &,class cv::Size_<int>,double,double,int)" (?resize@cv@@YAXABV_InputArray@1@ABV_OutputArray@1@V?$Size_@H@1@NNH@Z)
+D:\Documents\Interviews\SnapChatTest\SnapChatInteractivityTest\Release\OpenCVTest.dll : fatal error LNK1120: 21 unresolved externals
