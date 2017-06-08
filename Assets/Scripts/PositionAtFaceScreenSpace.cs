@@ -38,27 +38,27 @@ public class PositionAtFaceScreenSpace : MonoBehaviour {
     }
 
     void Update() {
+        static_Update();
+
         if (OpenCVFaceDetection.NormalizedFacePositions == null ||
             OpenCVFaceDetection.NormalizedFacePositions.Count == 0)
             return;
         else {
             //Debug.Log("Faces Detected: " + OpenCVFaceDetection.NormalizedFacePositions.Count);
+
+            //Debug.Log(string.Format("x: {0}, y: {1}",
+            //    OpenCVFaceDetection.NormalizedFacePositions[0].x,
+            //    OpenCVFaceDetection.NormalizedFacePositions[0].y));
         }
 
-        //Debug.Log(string.Format("x: {0}, y: {1}",
-        //    OpenCVFaceDetection.NormalizedFacePositions[0].x,
-        //    OpenCVFaceDetection.NormalizedFacePositions[0].y));
-
-        static_Update();
-
-        Vector3 pos = new Vector3(OpenCVFaceDetection.NormalizedFacePositions[0].x + .2f,
-                                  OpenCVFaceDetection.NormalizedFacePositions[0].y,
-                                  _camDistance);
+        Vector3 pos = new Vector3(OpenCVFaceDetection.NormalizedFacePositions[0].x * 2 // + .2f
+                                , OpenCVFaceDetection.NormalizedFacePositions[0].y // - .2f,
+                                , _camDistance);
         Rigidbody rb = GetComponent<Rigidbody>();
-        if (!applyingForce && (rb == null || rb.velocity.magnitude < .1f)) {
+        if (!applyingForce && (rb == null || rb.velocity.magnitude < .2f)) {
             transform.localPosition   = Vector3.Lerp(transform.localPosition, myCamera.ViewportToWorldPoint(pos), .1f);
         }
-        transform.localScale = Vector3.one;
+        //transform.localScale = Vector3.one;
 
     }
     private void LateUpdate() {

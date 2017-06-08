@@ -38,8 +38,8 @@ public class DisplayFeed : MonoBehaviour {
 
 
     //INPUT PARAMETERS
-    public GameObject target_renderObject;
-    public GameObject target_renderObject2;
+    public GameObject src_renderGo;
+    public GameObject tgt_renderGo;
 
     Renderer rend;
     byte[] imgdata;
@@ -48,9 +48,15 @@ public class DisplayFeed : MonoBehaviour {
     private CvCircle[] _faces;
     private WebCamTexture webcamscreen;
     private WebCamDevice[] devices;
-
+#if UNITY_EDITOR
     int resx = 320;
     int resy = 240;
+#elif UNITY_ANDROID
+    int resx = 320;
+    int resy = 240;
+#endif
+
+    int camUsed = 1;
 
     Color32[] pixels;
     GCHandle pixelsHandle;
@@ -59,9 +65,7 @@ public class DisplayFeed : MonoBehaviour {
     Quaternion baseRotation = Quaternion.identity;
 
     IEnumerator GetStreamingAsset(string path) {
-
         Debug.Log("CascadesPath: " + path);
-
         string to_write = "";
         if (path.Contains("://")) {
             WWW l_www = new WWW(path);
@@ -72,7 +76,6 @@ public class DisplayFeed : MonoBehaviour {
             else {
                 Debug.Log("streaming asset: " + l_www.text);
                 to_write = l_www.text;
-
             }
         }
         else {
@@ -92,7 +95,8 @@ public class DisplayFeed : MonoBehaviour {
         w.WriteLine(to_write);
         w.Close();
 
-        /////////////////////////////
+/////////////////////////////
+        init = true;
         int result = LoadCascade(f.FullName); //path_to_load);
         if (result < 0) {
             if (result == -1) {
@@ -100,27 +104,24 @@ public class DisplayFeed : MonoBehaviour {
             }
             init = false;
         }
-        else {
-            init = true;
-        }
 ///////////////////////////
     }
-
+ 
     void Start() {
         devices = WebCamTexture.devices;
         if (devices.Length > 0) {
             webcamscreen = new WebCamTexture(resx, resy);
 
             if (devices.Length >= 2) {
-                webcamscreen.deviceName = devices[1].name;
+                webcamscreen.deviceName = devices[camUsed].name;
             }
-            webcamscreen.requestedWidth = resx;
+            webcamscreen.requestedWidth  = resx;
             webcamscreen.requestedHeight = resy;
 
             imgdata = new byte[resx * resy * 4];
 
             tex = new Texture2D(resx, resy, TextureFormat.RGBA32, false);
-            rend = target_renderObject.GetComponent<Renderer>();
+            rend = src_renderGo.GetComponent<Renderer>();
             webcamscreen.Play();
 
             Init(resx, resy);
@@ -140,10 +141,21 @@ public class DisplayFeed : MonoBehaviour {
 
             ///////////////////////////////////////////////////
 
-            baseRotation = target_renderObject.transform.rotation;
+            baseRotation = src_renderGo.transform.rotation;
         }
         else {
             Debug.LogError("[DisplayFeed] No WebCamera Detected!");
+        }
+    }
+
+    public void ToggleCamera() {
+        if (devices.Length >= 2) {
+            camUsed = (camUsed + 1) % devices.Length;
+
+            webcamscreen.Stop();
+            webcamscreen.deviceName = devices[camUsed].name;
+            Debug.Log("Toggle Camera: " + webcamscreen.deviceName);
+            webcamscreen.Play();
         }
     }
 
@@ -156,7 +168,7 @@ public class DisplayFeed : MonoBehaviour {
 
         //Debug.Log("[DisplayFeed] webcam rotation: " + webcamscreen.videoRotationAngle);
 
-        rend = target_renderObject.GetComponent<Renderer>();
+        rend = src_renderGo.GetComponent<Renderer>();
         rend.material.mainTexture = webcamscreen;
 
         pixels = webcamscreen.GetPixels32();
@@ -184,14 +196,17 @@ public class DisplayFeed : MonoBehaviour {
             }
         }
 
+        //Debug.Log(string.Format("[DisplayFeed] imgData: {0} pixels.Length: {1}", imgdata.Length, pixels.Length));
+        //Debug.Log(string.Format("[DisplayFeed] wxh: ({0},{1})", webcamscreen.width, webcamscreen.height));
+
         Marshal.Copy(result, imgdata, 0, pixels.Length * 4);
         tex.LoadRawTextureData(imgdata);
         tex.Apply();
-        rend = target_renderObject2.GetComponent<Renderer>();
+        rend = tgt_renderGo.GetComponent<Renderer>();
         rend.material.mainTexture = tex;
 
-        target_renderObject.transform.rotation  = baseRotation * Quaternion.AngleAxis(webcamscreen.videoRotationAngle, Vector3.up);
-        target_renderObject2.transform.rotation = baseRotation * Quaternion.AngleAxis(webcamscreen.videoRotationAngle, Vector3.up);
+        //target_renderObject.transform.rotation  = baseRotation * Quaternion.AngleAxis(webcamscreen.videoRotationAngle, Vector3.up);
+        tgt_renderGo.transform.rotation = baseRotation * Quaternion.AngleAxis(webcamscreen.videoRotationAngle, Vector3.up);
 
         // Release memory
         // TODO: Perform Memory Cleanup steps here.
